@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react'
+import Title from "./components/Title"
 
 function App() {
   const [name, setName] = useState('John')
@@ -23,11 +24,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>My name is {name}</h1>
-      
-      <button onClick={handleClick}>Change name</button>
-      <hr />
-      <br />
+      <Title/>
       {showContent && <button onClick={() => setShowContent(false)}>toggle</button>}
       {!showContent &&  <button onClick={() => setShowContent(true)}>toggle</button>}
       {showContent && events.map((event) => {
