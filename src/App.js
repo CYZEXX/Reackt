@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react'
 import Title from "./components/Title"
+import { Fragment } from 'react'
 
 function App() {
   const [name, setName] = useState('John')
@@ -22,17 +23,19 @@ function App() {
     })
     setEvents(filteredEvents)
   }
+
+  const subtitle = "All events well be here :("
   return (
     <div className="App">
-      <Title/>
+      <Title title="John kingdom events" subtitle={subtitle}/>
       {showContent && <button onClick={() => setShowContent(false)}>toggle</button>}
       {!showContent &&  <button onClick={() => setShowContent(true)}>toggle</button>}
       {showContent && events.map((event) => {
         return (
-          <div key={event.id}>
+          <Fragment key={event.id}>
             <h2>{event.title}</h2>
             <button onClick={ () => handLeDelete(event.id)}> Delete</button>
-          </div>
+          </Fragment>
         )
       })}
     </div>

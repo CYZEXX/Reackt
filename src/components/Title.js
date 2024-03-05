@@ -1,9 +1,9 @@
-const Title = () => {
+const Title = ({title, subtitle}) => {
     return (
         <div>
-            <h1 className="title">John Kingdom Event</h1>
+            <h1 className="title">{title}</h1>
             <br />
-            <p className="subtitle">All events wel be here</p>
+            <p className="subtitle">{subtitle}</p>
         </div>
     )
 }
